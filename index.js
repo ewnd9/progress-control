@@ -13,8 +13,16 @@ module.exports = function(format, progressBarOptions, bindings) {
 
   process.stdin.on('keypress', function (ch, key) {
     if (key) {
-      if (key.ctrl && key.name === 'c') {
-        process.stdin.pause();
+      if (key.ctrl === true) {
+        if (key.name === 'c') {
+          process.stdin.pause();
+        } else if (key.name === 'd') {
+          process.exit();
+        }
+        var binding = bindings['ctrl-' + key.name];
+        if (binding && typeof binding === 'function') {
+          binding();
+        }
       } else if (key.name in bindings && typeof bindings[key.name] === 'function') {
         bindings[key.name]();
       }
