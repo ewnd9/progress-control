@@ -8,6 +8,10 @@ var bar = require('../')('Use up/down arrows [:bar]', { total: 10 }, {
   'down': function() {
     value = Math.max(Math.round((value - 0.1) * 10) / 10, 0);
     bar.update(value);
+  },
+  'ctrl-v': function() {
+    value = 1.0;
+    bar.update(value);
   }
 });
 
