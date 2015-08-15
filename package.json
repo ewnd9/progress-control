@@ -17,6 +17,7 @@
   "author": "ewnd9 <ewndnine@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "cli-cursor": "^1.0.1",
     "keypress": "^0.2.1",
     "progress": "^1.1.8"
   },

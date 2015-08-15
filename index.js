@@ -1,6 +1,7 @@
 var ProgressBar = require('progress');
 var keypress = require('keypress');
 var tty = require('tty');
+var cliCursor = require('cli-cursor');
 
 module.exports = function(format, progressBarOptions, bindings) {
 
@@ -14,6 +15,8 @@ module.exports = function(format, progressBarOptions, bindings) {
 
   var bar = new ProgressBar(format, progressBarOptions);
   var enabled = true;
+  
+  cliCursor.hide();
 
   bar.terminate = function() {
     // override internal api to prevent termination on full bar
@@ -25,6 +28,8 @@ module.exports = function(format, progressBarOptions, bindings) {
 
     setRawMode(false);
     enabled = false;
+
+    cliCursor.show();
   };
 
   keypress(process.stdin);
