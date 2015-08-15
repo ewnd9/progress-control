@@ -12,3 +12,8 @@ var bar = require('../')('Use up/down arrows [:bar]', { total: 10 }, {
 });
 
 bar.update(value);
+
+setTimeout(function() {
+  bar.close();
+  console.log('hi');
+}, 1000);
