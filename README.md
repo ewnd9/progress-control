@@ -1,5 +1,7 @@
 # progress-control
 
+[![Build Status](https://travis-ci.org/ewnd9/progress-control.svg?branch=master)](https://travis-ci.org/ewnd9/progress-control)
+
 [node-progress](https://github.com/tj/node-progress) wrapper to control bar from keyboard
 
 ## Install
